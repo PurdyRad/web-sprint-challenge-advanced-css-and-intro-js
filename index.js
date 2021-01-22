@@ -217,7 +217,7 @@ console.log(artists[2].bio)
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-artists[8].name = 'Vincent Van Gogh'
+//artists[8].name = 'Vincent Van Gogh'
 
 console.log(artists)
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -243,8 +243,13 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array){
-  //const newArray = [];
-    //for
+  const newArray = [];
+    for(let i = 0; i < array.length; i++){
+      if(array[i].years.includes(1900-2000)){
+        newArray.push(array[i].years);
+      }
+    }
+    return newArray;
 }
 
 
@@ -281,17 +286,17 @@ Use addArtist to do the following:
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array){
-    const newObj = {
+    const newObj = [{
       id: 20,
       name: 'Adam',
       years: 1996 - 2021,
       genre: 'Web Design',
       nationality: 'American',
-      bio: 'This guy loves tacos. He is also an avid raver!'};
-    array.push(newObj)
+      bio: 'This guy loves tacos. He is also an avid raver!'}];
+    newObj.push(array)
     return array
   }
-  console.log(array(artists))
+  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -301,10 +306,14 @@ Use lotsOfArt to do the following:
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(array){
-  for( let i = 0; i < )
+  let newArray = [];
+  for( let i = 0; i < array.length; i++){
+    if(array[i].paintings > 100){
+      newArray.push(array[i].paintings);
+    }
+  }
+  return newArray;
 }
-
-
 
 
 // 🎨🎨 STRETCH 🎨🎨//
